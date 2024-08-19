@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+    <Page Remove="bin\**" />
+    <Page Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="HuellaDb.db" />
   </ItemGroup>
 
@@ -22,7 +33,19 @@
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.8" />
     <PackageReference Include="WPFDevelopers" Version="1.1.0.2-preview9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="FPModule_C#">
+      <HintPath>..\..\..\..\Desktop\FPModule_SDK_V2.2.1_202027(for Windows)\demo\C#Demo\Demo\bin\x64\FPModule_C#.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FPmodules\x86\" />
+    <Folder Include="FPmodules\x64\" />
   </ItemGroup>
 
 </Project>

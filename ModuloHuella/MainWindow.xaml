@@ -18,6 +18,22 @@
                 Padding="10,0"
                 Content="Foto"
                 IsChecked="False" Margin="136,107,195,64" Grid.Row="1" Grid.Column="2" />
+        <Border Name="Huella" 
+  BorderThickness="1"
+  BorderBrush="LightSeaGreen"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Left"
+  Margin="121,21,0,0"
+  Height="100" 
+  Width="100" Grid.Column="2">
+
+            <Image x:Name="HuellaI" />
+
+
+        </Border>
+        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="121,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2"/>
+
+
         <TextBox
      Margin="221,178,366,208"
      wd:ElementHelper.IsClear="True"
@@ -45,11 +61,11 @@
         <Button
                             Margin="121,129,228,57"
                             wd:ElementHelper.CornerRadius="2"
-                            Content="Capturar Huella" Click="Button_Click_1" Grid.Column="2"  />
+                            Content="Capturar Huella" Click="Button_CapturaHuella" Grid.Column="2"  />
         <Button
   
    Content="Guardar"
-   Style="{DynamicResource WD.SuccessDefaultButton}" Margin="13,156,356,23" Grid.Row="1" Click="Button_Click" Grid.Column="2" />
+   Style="{DynamicResource WD.SuccessDefaultButton}" Margin="13,156,356,23" Grid.Row="1" Click="Button_Enviar" Grid.Column="2" />
 
         <Border Name="FotoDePerfil" 
   BorderThickness="1"
@@ -65,22 +81,7 @@
 
 
         </Border>
-        <Border Name="Huella" 
-          BorderThickness="1"
-          BorderBrush="LightSeaGreen"
-          VerticalAlignment="Top"
-          HorizontalAlignment="Left"
-          Margin="121,21,0,0"
-          Height="100" 
-          Width="100" Grid.Column="2">
-
-            <Image Name="HuellaI" 
-         Stretch="Fill"/>
-
-
-        </Border>
-        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="121,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2"/>
-
+        <Label x:Name="TextoHuella" Grid.Column="2" Content="" HorizontalAlignment="Left" Height="24" Margin="122,178,0,0" VerticalAlignment="Top" Width="103" FontFamily="Calibri" FontSize="11"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="221*"/>
             <RowDefinition Height="213*"/>
