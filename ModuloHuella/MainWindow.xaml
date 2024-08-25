@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Datos del Socio" Height="450" Width="383">
 
-  
+
     <Grid HorizontalAlignment="Center" Width="795" Height="434" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -16,7 +16,7 @@
             <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="450*"/>
         </Grid.ColumnDefinitions>
-        
+
         <ToggleButton
             x:Name="toggleButton"
                 Padding="10,0"
@@ -86,6 +86,7 @@ wd:ElementHelper.Watermark="Apellido Paterno" TextChanged="TextBox_TextChanged" 
             Margin="121,96,228,82"
             wd:ElementHelper.CornerRadius="2"
             Content="CapturarFoto" Click="CapturaFoto_Click" Grid.Column="3" Grid.Row="1" RenderTransformOrigin="0.502,0.5" IsEnabled="{Binding IsChecked, ElementName=toggleButton}" />
+        <Button x:Name="prueba" Grid.Column="1" Content="prueba" HorizontalAlignment="Left" Margin="226,132,0,0" Grid.Row="1" VerticalAlignment="Top" Width="81" Grid.ColumnSpan="2" Click="prueba_Click"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="221*"/>
             <RowDefinition Height="213*"/>

@@ -138,7 +138,7 @@ namespace ModuloHuella
             //所有流类型都要关闭流，否则会出现内存泄露问题
             file.Close();
         }
-        void FpMessageCallback(FPMsg.FP_MSG_TYPE_T enMsgType, IntPtr pMsgData)
+        public void FpMessageCallback(FPMsg.FP_MSG_TYPE_T enMsgType, IntPtr pMsgData)
         {
             switch (enMsgType)
             {
@@ -175,6 +175,7 @@ namespace ModuloHuella
                         bitmap.CacheOption = BitmapCacheOption.OnLoad;
                         bitmap.EndInit();
                         HuellaI.Source = bitmap;
+                        //fpImageBox.Source = bitmap;
 
                         string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Enroll{index}.bmp");
                         using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
@@ -373,7 +374,11 @@ namespace ModuloHuella
             base.OnClosed(e);
         }
 
-
+        private void prueba_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 nuevaVentana = new Window1();
+            nuevaVentana.Show();
+        }
     }
 }
 
