@@ -8,16 +8,20 @@
         mc:Ignorable="d"
         Title="Datos del Socio" Height="450" Width="383">
 
+  
     <Grid HorizontalAlignment="Center" Width="795" Height="434" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="343*"/>
+            <ColumnDefinition Width="272*"/>
+            <ColumnDefinition Width="71*"/>
             <ColumnDefinition Width="450*"/>
         </Grid.ColumnDefinitions>
+        
         <ToggleButton
+            x:Name="toggleButton"
                 Padding="10,0"
                 Content="Foto"
-                IsChecked="False" Margin="136,107,195,64" Grid.Row="1" Grid.Column="2" />
+                IsChecked="False" Margin="132,140,199,31" Grid.Row="1" Grid.Column="3" Checked="ToggleButton_Checked" />
         <Border Name="Huella" 
   BorderThickness="1"
   BorderBrush="LightSeaGreen"
@@ -25,63 +29,63 @@
   HorizontalAlignment="Left"
   Margin="121,21,0,0"
   Height="100" 
-  Width="100" Grid.Column="2">
+  Width="100" Grid.Column="3">
 
             <Image x:Name="HuellaI" />
 
 
         </Border>
-        <ProgressBar HorizontalAlignment="Left" Height="10" Margin="121,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="2"/>
+        <ProgressBar x:Name="ProgressBarCaptura" HorizontalAlignment="Left" Height="10" Margin="121,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="3" ValueChanged="ProgressBar_ValueChanged"/>
 
+        <TextBox x:Name="Nombre"
+Margin="229,50,356,123"
+wd:ElementHelper.IsClear="True"
+wd:ElementHelper.Watermark="Nombre" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="3" Grid.Column="1" />
+        <TextBox x:Name="ApellidoP"
+Margin="229,102,356,71"
+wd:ElementHelper.IsClear="True"
+wd:ElementHelper.Watermark="Apellido Paterno" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="3" Grid.Column="1" />
+        <TextBox x:Name="ApellidoM"
+     Margin="229,155,356,18"
+     wd:ElementHelper.IsClear="True"
+     wd:ElementHelper.Watermark="Apellido Materno" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="3" Grid.Column="1" />
+        <TextBox x:Name="Celular"
+     Margin="229,208,357,180"
+     wd:ElementHelper.IsClear="True"
+     wd:ElementHelper.Watermark="Celular" TextChanged="TextBox_TextChanged" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+        <TextBox x:Name="Correo"
+     Margin="229,39,358,131"
+     wd:ElementHelper.IsClear="True"
+     wd:ElementHelper.Watermark="Email" TextChanged="TextBox_TextChanged" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" />
 
-        <TextBox
-     Margin="221,178,366,208"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Apellido Materno" TextChanged="TextBox_TextChanged" Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox
-     Margin="221,73,366,100"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Nombre" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox
-     Margin="221,125,366,48"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Apellido Paterno" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox
-     Margin="221,10,366,143"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Celular" TextChanged="TextBox_TextChanged" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox
-     Margin="221,73,366,82"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Email" TextChanged="TextBox_TextChanged" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox
-     Margin="221,21,366,152"
-     wd:ElementHelper.IsClear="True"
-     wd:ElementHelper.Watermark="Id Cliente" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Grid.Column="1" />
         <Button
-                            Margin="121,129,228,57"
+                            Margin="121,128,228,58"
                             wd:ElementHelper.CornerRadius="2"
-                            Content="Capturar Huella" Click="Button_CapturaHuella" Grid.Column="2"  />
+                            Content="Capturar Huella" Click="CapturaHuella_Click" Grid.Column="3"  />
         <Button
   
    Content="Guardar"
-   Style="{DynamicResource WD.SuccessDefaultButton}" Margin="13,156,356,23" Grid.Row="1" Click="Button_Enviar" Grid.Column="2" />
+   Style="{DynamicResource WD.SuccessDefaultButton}" Margin="13,156,356,23" Grid.Row="1" Click="Button_Enviar" Grid.Column="3" />
 
         <Border Name="FotoDePerfil" 
   BorderThickness="1"
   BorderBrush="LightSeaGreen"
   VerticalAlignment="Top"
   HorizontalAlignment="Left"
-  Margin="121,217,0,0"
+  Margin="121,205,0,0"
   Height="100" 
-  Width="100" Grid.RowSpan="2" Grid.Column="2">
+  Width="100" Grid.RowSpan="2" Grid.Column="3">
 
-            <Image Name="FotoDePerfilI" 
+            <Image Name="webcamImage"
  Stretch="Fill"/>
 
 
         </Border>
-        <Label x:Name="TextoHuella" Grid.Column="2" Content="" HorizontalAlignment="Left" Height="24" Margin="122,178,0,0" VerticalAlignment="Top" Width="103" FontFamily="Calibri" FontSize="11"/>
+        <Label x:Name="TextoHuella" Grid.Column="3" Content="" HorizontalAlignment="Left" Height="24" Margin="101,179,0,0" VerticalAlignment="Top" Width="128" FontFamily="Calibri" FontSize="11"/>
+        <Button
+            Margin="121,96,228,82"
+            wd:ElementHelper.CornerRadius="2"
+            Content="CapturarFoto" Click="CapturaFoto_Click" Grid.Column="3" Grid.Row="1" RenderTransformOrigin="0.502,0.5" IsEnabled="{Binding IsChecked, ElementName=toggleButton}" />
         <Grid.RowDefinitions>
             <RowDefinition Height="221*"/>
             <RowDefinition Height="213*"/>

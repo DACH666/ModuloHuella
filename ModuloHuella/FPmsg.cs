@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 namespace ModuloHuella
 
 {
-    class FPMsg
+    public class FPMsg
     {
         /* Message type definition */
         public enum FP_MSG_TYPE_T

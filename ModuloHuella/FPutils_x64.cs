@@ -25,7 +25,7 @@ namespace ModuloHuella
          *  @param  : None
          *  @return : 0->断开成功 1->通信失败
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\       .dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\Fpmodule_sdk_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_CloseDevice();
 
 
