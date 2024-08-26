@@ -24,10 +24,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="FPModule_SDK.dll" />
+    <None Remove="FPModule_SDK_x64.dll" />
     <None Remove="HuellaDb.db" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="FPModule_SDK.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FPModule_SDK_x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="HuellaDb.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -51,12 +59,6 @@
     <PackageReference Include="System.Drawing.Common" Version="8.0.8" />
     <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
     <PackageReference Include="WPFDevelopers" Version="1.1.0.2-preview9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="FPModule_C#">
-      <HintPath>..\..\..\..\Desktop\FPModule_SDK_V2.2.1_202027(for Windows)\demo\C#Demo\Demo\bin\x64\FPModule_C#.exe</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

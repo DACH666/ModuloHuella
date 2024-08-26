@@ -16,7 +16,7 @@ namespace ModuloHuella
          *  @return : 0->连接成功 1->通信失败
          */
         // 检测设备
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_OpenDevice();
 
 
@@ -25,7 +25,7 @@ namespace ModuloHuella
          *  @param  : None
          *  @return : 0->断开成功 1->通信失败
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\Fpmodule_sdk_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"Fpmodule_sdk_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_CloseDevice();
 
 
@@ -34,7 +34,7 @@ namespace ModuloHuella
          *  @param  : pdwFpstatus[out] -> 0:无指纹输入  1:有指纹输入
          *  @return : 0->执行成功 1->通信失败
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_DetectFinger(ref int pdwFpstatus);
 
 
@@ -45,7 +45,7 @@ namespace ModuloHuella
                       pdwHeight[out]    -> 指纹图像高度
          *  @return : 0->执行成功 1->通信失败
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_CaptureImage(byte[] pbyImageData, ref int pdwWidth, ref int pdwHeight);
 
 
@@ -54,7 +54,7 @@ namespace ModuloHuella
          *  @param  : dwSecond[in] -> 超时时间(单位：秒) 可设置值：1秒至60秒
          *  @return : 0->执行成功 1->通信失败 
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_SetTimeout(int dwSecond);
 
 
@@ -63,7 +63,7 @@ namespace ModuloHuella
          *  @param  : pdwSecond[out] -> 超时时间 单位：秒
          *  @return : 0->执行成功 1->通信失败 
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_GetTimeout(ref int pdwSecond);
 
 
@@ -72,7 +72,7 @@ namespace ModuloHuella
 *  @param  : dwTimes[in] -> 0~4,0默认模式（2~4次），1~3采集次数
 *  @return : 0->执行成功 1->通信失败
 */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_SetCollectTimes(int dwTimes);
 
 
@@ -81,7 +81,7 @@ namespace ModuloHuella
         *  @param  : pdwTimes[out] -> 采集次数
         *  @return : 0->执行成功 1->通信失败
         */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_GetCollectTimes(ref int pdwTimes);
 
         /** @func   : FPModule_InstallMessageHandler
@@ -89,7 +89,7 @@ namespace ModuloHuella
          *  @param  : msgHandler[in] -> 消息处理函数
          *  @return : 0->执行成功
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_InstallMessageHandler(FPMsg.FpMessageHandler msgHandler);
 
 
@@ -98,7 +98,7 @@ namespace ModuloHuella
          *  @param  : pbyFpTemplate[out] -> 指纹模板(512字节)
          *  @return : 0->执行成功 1->通信失败 2->采集超时 3->录入失败
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_FpEnroll(byte[] pbyFpTemplate);
 
 
@@ -107,7 +107,7 @@ namespace ModuloHuella
          *  @param  : pbyFpTemplate[in] -> 指纹模板(512字节)
          *  @return : 指纹模板分数(0~100) 分数越高，表示模板的质量越好
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_GetQuality(byte[] pbyFpTemplate);
 
         /** @func   : FPModule_MatchTemplate
@@ -117,7 +117,7 @@ namespace ModuloHuella
                       dwSecurityLevel[in] -> 安全等级（1~5）
          *  @return : 0->比对成功 6->比对失败 4->参数错误
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_MatchTemplate(byte[] pbyFpTemplate1, byte[] pbyFpTemplate2, int dwSecurityLevel);
 
         /** @func   : FPModule_GetDeviceInfo
@@ -125,7 +125,7 @@ namespace ModuloHuella
          *  @param  : pbyDeviceInfo[out] -> 指纹采集仪版本信息(64字节)
          *  @return : 0->执行成功 1->通信失败 
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_GetDeviceInfo(byte[] pbyDeviceInfo);
 
 
@@ -134,7 +134,7 @@ namespace ModuloHuella
          *  @param  : pbySDKVersion[out] -> 指纹采集仪SDK版本信息(64字节)
          *  @return : 0->执行成功
          */
-        [DllImport(@"C:\Users\David\source\repos\ModuloHuella\ModuloHuella\FPmodules\x64\FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"FPModule_SDK_x64.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern int FPModule_GetSDKVersion(byte[] pbySDKVersion);
 
 
